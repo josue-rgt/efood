@@ -1,0 +1,9 @@
+import styled from 'styled-components'
+
+export const ListContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+`
