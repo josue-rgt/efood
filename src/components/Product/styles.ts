@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
-  font-family: Roboto, sans-serif;
+  //!font-family: Roboto, sans-serif;
   position: relative;
 
   ${TagContainer} {

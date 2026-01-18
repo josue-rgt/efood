@@ -1,13 +1,15 @@
 class Food {
   image: string
+  imageNav?: string
   title: string
-  rating: number
+  rating: number 
   infos: string[]
   description: string
   id: number
 
   constructor(
     image: string,
+    imageNav: string,
     title: string,
     rating: number,
     infos: string[],
@@ -15,6 +17,7 @@ class Food {
     id: number
   ) {
     this.image = image
+    this.imageNav = imageNav
     this.title = title
     this.rating = rating
     this.infos = infos

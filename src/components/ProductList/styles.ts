@@ -5,5 +5,5 @@ export const ListContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 `

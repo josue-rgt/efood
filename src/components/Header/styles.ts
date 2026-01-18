@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ImageHeader = styled.div`
   width: 100%;
-  height: 384px;
+  height: 360px;
   background-repeat: no-repeat;
   background-size: cover;
 

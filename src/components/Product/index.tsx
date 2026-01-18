@@ -1,8 +1,7 @@
 import { Card, Image, Title, Description, Infos } from './styles'
 import Nota from '../Nota'
-// import imagem from '../../assets/images/imagem.png'
 import Tag from '../Tag'
-import { Botao } from '../Button/styles'
+import Button from '../Button'
 
 type Props = {
   image: string
@@ -26,7 +25,7 @@ const Product = ({ image, title, rating, infos, description }: Props) => (
         <Nota>{rating}</Nota>
       </div>
       <p>{description}</p>
-      <Botao>Saiba mais</Botao>
+      <Button to='/perfil'>Saiba mais</Button>
     </Description>
   </Card>
 )
