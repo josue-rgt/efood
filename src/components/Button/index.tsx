@@ -2,9 +2,8 @@ import { Botao } from './styles'
 
 type Props = {
   children: string
-  to: string
 }
 
-const Button = ({ children, to }: Props) => <Botao to={to}>{children}</Botao>
+const Button = ({ children }: Props) => <Botao>{children}</Botao>
 
 export default Button

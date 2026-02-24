@@ -1,0 +1,64 @@
+  import { useState } from 'react'
+import type { Restaurants } from '../../pages/Home'
+import ProductPerfil from '../ProductPerfil'
+import ButtonPerfil from '../ButtonPerfil'
+import { Modal, ModalContent, PerfilContainer } from './styles'
+
+export type Perfilprops = {
+  foods: Restaurants['cardapio']
+}
+
+const ProductPerfilList = ({ foods }: Perfilprops) => {
+  const [foodSelecionada, setFoodSelecionada] =
+    useState<Restaurants['cardapio'][0] | null>(null)
+
+  const [modalAberta, setModalAberta] = useState(false)
+
+  const abrirModal = (food: Restaurants['cardapio'][0]) => {
+    setFoodSelecionada(food)
+    setModalAberta(true)
+  }
+
+  const fecharModal = () => {
+    setModalAberta(false)
+    setFoodSelecionada(null)
+  }
+
+  return (
+    <div className="container">
+      <PerfilContainer>
+        {foods.map((food) => (
+          <ProductPerfil
+            key={food.id}
+            image={food.foto}
+            title={food.nome}
+            description={food.descricao}
+            onClick={() => abrirModal(food)}
+          />
+        ))}
+      </PerfilContainer>
+
+      {modalAberta && foodSelecionada && (
+        <Modal onClick={fecharModal}>
+          <ModalContent onClick={(e) => e.stopPropagation()}>
+            <img src={foodSelecionada.foto} alt={foodSelecionada.nome} />
+
+            <h1>{foodSelecionada.nome}</h1>
+
+            <p>
+              {foodSelecionada.descricao}
+              <br />
+              Serve: {foodSelecionada.porcao}
+            </p>
+
+            <ButtonPerfil size="sm">
+              Adicionar ao carrinho - R$ {foodSelecionada.preco}
+            </ButtonPerfil>
+          </ModalContent>
+        </Modal>
+      )}
+    </div>
+  )
+}
+
+export default ProductPerfilList

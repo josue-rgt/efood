@@ -1,13 +1,16 @@
 import LogoEfood from '../Logo'
-import { Text, ImageNav, ImageFood, TypeFood, NameFood } from './styles'
+import { Text, ImageNav, ImageRestaurant, TypeRestaurant, NameRestaurant } from './styles'
 import backHeader from '../../assets/images/backHeader.png'
-import type Food from '../../models/Food'
+// import type Food from '../../models/Food'
+
+import type { Restaurants } from '../../pages/Home'
+
 
 type Props = {
-  food: Food
+  restaurantCover: Restaurants
 }
 
-const Nav = ({ food }: Props) => (
+const Nav = ({ restaurantCover }: Props) => (
   <>
     <ImageNav style={{ backgroundImage: `url(${backHeader})` }}>
       <div className="container">
@@ -17,12 +20,14 @@ const Nav = ({ food }: Props) => (
       </div>
     </ImageNav>
 
-    <ImageFood style={{ backgroundImage: `url(${food.imageNav})` }}>
+    <ImageRestaurant style={{ backgroundImage: `url(${restaurantCover.capa})` }}>
       <div className="container">
-        <TypeFood>{food.infos}</TypeFood>
-        <NameFood>{food.title}</NameFood>
+        <TypeRestaurant>{restaurantCover.tipo}</TypeRestaurant>
+        <NameRestaurant>{restaurantCover.titulo}</NameRestaurant>
+        {/* <TypeFood>{food.infos}</TypeFood>
+        <NameFood>{food.title}</NameFood> */}
       </div>
-    </ImageFood>
+    </ImageRestaurant>
   </>
 )
 export default Nav

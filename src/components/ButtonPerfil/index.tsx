@@ -2,11 +2,12 @@ import { BotaoPerfil } from './styles'
 
 type Props = {
   size: 'sm' | 'md'
-  children: string
+  children: string 
+  onClick?: () => void
 }
 
-const ButtonPerfil = ({ size,children }: Props) => (
-  <BotaoPerfil size={size}>{children}</BotaoPerfil>
+const ButtonPerfil = ({ size,children, onClick }: Props) => (
+  <BotaoPerfil onClick={onClick} size={size}>{children}</BotaoPerfil>
 )
 
 export default ButtonPerfil

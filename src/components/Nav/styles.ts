@@ -5,22 +5,29 @@ export const ImageNav = styled.div`
   width: 100%;
   height: 163px;
 
-  div {
+  /* div {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-  }
+  } */
 
   .cart {
     justify-self: end;
   }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
 `
 
-export const ImageFood = styled.div`
+export const ImageRestaurant = styled.div`
   height: 280px;
   background-size: 100% 280px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   position: relative;
 
   &::after {
@@ -48,12 +55,12 @@ export const Text = styled.span`
   padding-top: 59px;
 `
 
-export const TypeFood = styled.p`
+export const TypeRestaurant = styled.p`
   font-weight: 100;
   padding-top: 25px;
 `
 
-export const NameFood = styled.p`
+export const NameRestaurant = styled.p`
   font-weight: 900;
   padding-top: 144.5px;
 `
